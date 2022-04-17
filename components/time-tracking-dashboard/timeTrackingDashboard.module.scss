@@ -47,23 +47,3 @@
     color: var(--clr-prim-text);
 }
 
-
-.nav {
-    display: grid;
-    grid-auto-flow: column;
-
-    align-items: center;
-    justify-items: center;
-    color: var(--clr-neutral-desaturated-blue);
-    font-size: var(--fs-card-title);
-    font-weight: var(--fw-400)
-}
-
-.navActive {
-    color: var(--clr-prim-text);
-}
-
-.navItem {
-    text-transform: capitalize;
-    cursor: pointer;
-}

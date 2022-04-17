@@ -1,6 +1,8 @@
 import type { NextPage } from 'next';
 import Head from 'next/head';
+
 import TimeTrackingDashboard from '../components/time-tracking-dashboard/TimeTrackingDashboard';
+import TimeTrackerProvider from '../context/timeTrackerContext/timeTrackerContext';
 
 const Home: NextPage = () => {
   return (
@@ -11,7 +13,9 @@ const Home: NextPage = () => {
         <link rel='icon' href='/assets/images/favicon-32x32.png' />
       </Head>
       <main>
-        <TimeTrackingDashboard />
+        <TimeTrackerProvider>
+          <TimeTrackingDashboard />
+        </TimeTrackerProvider>
       </main>
     </div>
   );
