@@ -1,0 +1,69 @@
+.dashboard {
+    display: grid;
+    row-gap: 2rem;
+}
+
+.header {
+    display: grid;
+    grid-template-rows: min-content 1fr;
+    
+    max-width: 33rem;
+    min-height: 20rem;
+    background-color: var(--clr-neutral-dark-blue);
+    color: var(--clr-prim-text);
+    border-radius: 1.5rem;
+    overflow: hidden;
+}
+
+.user {
+    display: grid;
+    grid-template-columns: min-content 1fr;
+    column-gap: 2rem;
+    
+    padding: 3rem;
+    border-bottom-left-radius: 1.5rem;
+    border-bottom-right-radius: 1.5rem;
+    background-color: var(--clr-prim-blue);
+}
+
+.img {
+    width: 65px;
+    height: 65px;
+    border-radius: 50%;
+    outline: var(--clr-prim-text) solid 3px;
+}
+
+.text {
+    display: grid;
+    align-content: center;
+    font-size: 1.5rem;
+
+    color: var(--clr-neutral-pale-blue);
+}
+
+.name {
+    font-size: 2.5rem;
+    font-weight: var(--fw-300);
+    color: var(--clr-prim-text);
+}
+
+
+.nav {
+    display: grid;
+    grid-auto-flow: column;
+
+    align-items: center;
+    justify-items: center;
+    color: var(--clr-neutral-desaturated-blue);
+    font-size: var(--fs-card-title);
+    font-weight: var(--fw-400)
+}
+
+.navActive {
+    color: var(--clr-prim-text);
+}
+
+.navItem {
+    text-transform: capitalize;
+    cursor: pointer;
+}

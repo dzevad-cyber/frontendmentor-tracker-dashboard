@@ -1,0 +1,11 @@
+// abstracts
+@use 'abstracts/root';
+@use 'abstracts/breakpoints';
+@use 'abstracts/mixins';
+
+// base styles
+@use 'base/reset';
+@use 'base/global';
+
+// pages styles
+@use 'pages/home';
