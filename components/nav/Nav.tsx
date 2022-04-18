@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { v4 as uuid } from 'uuid';
 
+import { useTimeTrackerContext } from '../../context/timeTrackerContext/timeTrackerContext';
 import styles from './Nav.module.scss';
 
 interface NavProps {
@@ -13,36 +14,18 @@ interface INavItem {
   active: boolean;
 }
 
-const Nav: React.FC<NavProps> = ({ items, activeIndex }) => {
-  const [navItems, setNavItems] = useState<INavItem[]>([]);
+const Nav: React.FC = () => {
+  const timeTrackerState = useTimeTrackerContext();
 
-  useEffect(() => {
-    const initalizeNavItems = items.map((item, index) => {
-      if (index === activeIndex) return { name: item, active: true };
-
-      return { name: item, active: false };
-    });
-
-    setNavItems(initalizeNavItems);
-  }, [items, activeIndex]);
+  console.log('timeTrackerState ', timeTrackerState);
 
   const filterActiveNavItem = (name: string): void => {
-    const newActiveNavItems = [...navItems];
-
-    newActiveNavItems.forEach((item) => {
-      if (item.name === name) {
-        item.active = true;
-      } else {
-        item.active = false;
-      }
-    });
-
-    setNavItems(newActiveNavItems);
+    timeTrackerState.dispatch({ type: name });
   };
 
   return (
     <ul className={styles.nav}>
-      {navItems.map((item) => (
+      {timeTrackerState.state.reportTypes.map((item) => (
         <li
           onClick={() => filterActiveNavItem(item.name)}
           key={uuid()}

@@ -9,7 +9,6 @@ import { useTimeTrackerContext } from '../../context/timeTrackerContext/timeTrac
 
 const TimeTrackingDashboard: React.FC = () => {
   const context = useTimeTrackerContext();
-  console.log('context ', context);
 
   return (
     <div className={styles.dashboard}>
@@ -27,9 +26,12 @@ const TimeTrackingDashboard: React.FC = () => {
             Report for <span className={styles.name}>Jeremy Robson</span>
           </p>
         </div>
-        <Nav items={['daily', 'weekly', 'monthly']} activeIndex={1} />
+        <Nav />
       </div>
-      <ReportList reports={data} />
+      <ReportList
+        reports={context.state.reports}
+        active={context.state.active}
+      />
     </div>
   );
 };

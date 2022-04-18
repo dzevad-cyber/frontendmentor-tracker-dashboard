@@ -42,7 +42,8 @@
 
 .title {
   font-size: var(--fs-body);
-  font-weight: var(--fw-500)
+  font-weight: var(--fw-500);
+  text-transform: capitalize;
 }
 
 // body styles
@@ -62,6 +63,10 @@
   font-weight: var(--fw-300);
   color: var(--clr-neutral-pale-blue);
   font-size: 1.5rem;
+}
+
+.menuIcon {
+  cursor: pointer;
 }
 
 // report colors by title

@@ -22,5 +22,14 @@ export interface IReport {
 }
 
 export interface ReportProps {
-  report: IReport;
+  title: string;
+  img: {
+    url: string;
+    width: number;
+    height: number;
+  };
+  type: {
+    current: number;
+    previous: number;
+  };
 }
