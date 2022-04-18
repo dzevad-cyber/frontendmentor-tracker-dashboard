@@ -1,18 +1,7 @@
-import { useEffect, useState } from 'react';
 import { v4 as uuid } from 'uuid';
 
 import { useTimeTrackerContext } from '../../context/timeTrackerContext/timeTrackerContext';
 import styles from './Nav.module.scss';
-
-interface NavProps {
-  items: string[];
-  activeIndex: number;
-}
-
-interface INavItem {
-  name: string;
-  active: boolean;
-}
 
 const Nav: React.FC = () => {
   const timeTrackerState = useTimeTrackerContext();
