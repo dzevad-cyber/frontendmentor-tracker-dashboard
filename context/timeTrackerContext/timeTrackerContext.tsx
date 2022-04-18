@@ -1,8 +1,13 @@
-import { createContext, ReactNode, useContext, useReducer } from 'react';
+import {
+  createContext,
+  Dispatch,
+  ReactNode,
+  useContext,
+  useReducer,
+} from 'react';
 
 import data from '../../data.json';
-
-export const TimeTrackerContext = createContext({});
+import { IReport } from '../../components/time-tracking-dashboard/report/report.interface';
 
 const initialState = {
   name: 'Jeremy Robson',
@@ -14,8 +19,27 @@ const initialState = {
   active: 'weekly',
   reports: [...data],
 };
+interface State {
+  name: string;
+  active: string;
+  reportTypes: { name: string; active: boolean }[];
+  reports: IReport[];
+}
 
-const reducer = (state, action: { type: string }) => {
+interface Action {
+  type: string;
+}
+interface ContextProps {
+  state: State;
+  dispatch: Dispatch<Action>;
+}
+
+export const TimeTrackerContext = createContext<ContextProps>({
+  state: initialState,
+  dispatch: (action: Action) => {},
+});
+
+const reducer = (state: State, action: Action): State => {
   switch (action.type) {
     case 'daily':
       return {

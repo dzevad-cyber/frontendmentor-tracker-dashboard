@@ -8,7 +8,7 @@ import Nav from '../nav/Nav';
 import { useTimeTrackerContext } from '../../context/timeTrackerContext/timeTrackerContext';
 
 const TimeTrackingDashboard: React.FC = () => {
-  const context = useTimeTrackerContext();
+  const { state } = useTimeTrackerContext();
 
   return (
     <div className={styles.dashboard}>
@@ -23,15 +23,12 @@ const TimeTrackingDashboard: React.FC = () => {
             />
           </div>
           <p className={styles.text}>
-            Report for <span className={styles.name}>Jeremy Robson</span>
+            Report for <span className={styles.name}>{state.name}</span>
           </p>
         </div>
         <Nav />
       </div>
-      <ReportList
-        reports={context.state.reports}
-        active={context.state.active}
-      />
+      <ReportList reports={state.reports} active={state.active} />
     </div>
   );
 };

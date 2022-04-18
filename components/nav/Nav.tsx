@@ -17,8 +17,6 @@ interface INavItem {
 const Nav: React.FC = () => {
   const timeTrackerState = useTimeTrackerContext();
 
-  console.log('timeTrackerState ', timeTrackerState);
-
   const filterActiveNavItem = (name: string): void => {
     timeTrackerState.dispatch({ type: name });
   };
