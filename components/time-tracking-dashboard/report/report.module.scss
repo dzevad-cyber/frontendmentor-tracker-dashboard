@@ -1,3 +1,5 @@
+@use '../../../styles/abstracts/mixins' as *;
+
 .report {
   max-width: 33rem;
   min-height: 16rem;
@@ -9,6 +11,11 @@
   overflow: hidden;
 
   position: relative;
+
+  @include mq(md) {
+      width: 25rem;
+      min-height: 25rem;
+  }
 }
 
 .reportBackgroundImage {
@@ -21,7 +28,6 @@
 // main section styles
 .main {
   background-color: var(--clr-neutral-dark-blue);
-  
   padding: 2rem;
   border-top-left-radius: 1.5rem;
   border-top-right-radius: 1.5rem;
@@ -30,6 +36,15 @@
 
   display: grid;
   align-content: center;
+  transition: background-color .2s ease-in;
+
+    &:hover {
+      background-color: var(--clr-neutral-desaturated-blue);
+    }
+
+  @include mq(md) {
+      min-height: 20rem;
+  }  
 }
 
 // header styles
@@ -52,11 +67,19 @@
   grid-auto-flow: column;
   justify-content: space-between;
   align-items: center;
+
+  @include mq(md) {
+    grid-auto-flow: row;
+  }
 }
 
 .current {
   font-size: 3rem;
   font-weight: var(--fw-300);
+
+  @include mq(md) {
+    font-size: 5rem;
+  }
 }
 
 .previous {

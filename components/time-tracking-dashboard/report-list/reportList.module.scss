@@ -1,4 +1,12 @@
+@use '../../../styles/abstracts/mixins' as *;
+
 .list {
   display: grid;
   row-gap: 2.5rem;
+
+
+  @include mq(md) {
+    grid-template-columns: 1fr 1fr 1fr;
+    column-gap: 2rem;
+  }
 }

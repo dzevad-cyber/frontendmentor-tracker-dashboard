@@ -1,3 +1,5 @@
+@use '../../styles/abstracts/mixins' as *;
+
 .nav {
   display: grid;
   grid-auto-flow: column;
@@ -6,7 +8,15 @@
   justify-items: center;
   color: var(--clr-neutral-desaturated-blue);
   font-size: var(--fs-card-title);
-  font-weight: var(--fw-400)
+  font-weight: var(--fw-400);
+
+  @include mq(md) {
+    grid-auto-flow: row;
+    // align-content: center;
+    justify-content: start;
+    justify-items: start;
+    padding: 3rem;
+  }
 }
 
 .navActive {
@@ -16,4 +26,10 @@
 .navItem {
   text-transform: capitalize;
   cursor: pointer;
+  transition: color .2s ease-in;
+
+  &:hover {
+    color: var(--clr-prim-text);
+  }
+  
 }
