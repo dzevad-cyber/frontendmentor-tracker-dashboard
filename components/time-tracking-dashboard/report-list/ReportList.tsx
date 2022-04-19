@@ -9,13 +9,9 @@ import styles from './reportList.module.scss';
 const ReportList: React.FC<ReportListProps> = ({ reports, active }) => {
   return (
     <ul className={styles.list}>
-      {reports.map((report) => (
+      {reports.map(({ title, img, timeframes }) => (
         <li key={uuid()}>
-          <Report
-            title={report.title}
-            img={report.img}
-            type={report.timeframes[active]}
-          />
+          <Report title={title} img={img} type={timeframes[active]} />
         </li>
       ))}
     </ul>
