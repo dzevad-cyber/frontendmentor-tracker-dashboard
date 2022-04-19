@@ -10,9 +10,8 @@
   font-size: var(--fs-card-title);
   font-weight: var(--fw-400);
 
-  @include mq(md) {
+  @include mq(lg) {
     grid-auto-flow: row;
-    // align-content: center;
     justify-content: start;
     justify-items: start;
     padding: 3rem;

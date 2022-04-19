@@ -4,7 +4,7 @@
     display: grid;
     row-gap: 2rem;
 
-    @include mq(sm) {
+    @include mq(lg) {
         grid-template-columns: min-content 1fr;
         column-gap: 2rem;
     }
@@ -22,7 +22,7 @@
     border-radius: 1.5rem;
     overflow: hidden;
 
-    @include mq(md) {
+    @include mq(lg) {
         width: 25rem;
     }
 }
@@ -37,7 +37,7 @@
     border-bottom-right-radius: 1.5rem;
     background-color: var(--clr-prim-blue);
 
-    @include mq(md) {
+    @include mq(lg) {
         grid-template-columns: 1fr;
         min-height: 35rem;
     }
@@ -50,7 +50,7 @@
     outline: var(--clr-prim-text) solid 3px;
     position: relative;
 
-    @include mq(md) {
+    @include mq(lg) {
         width: 80px;
         height: 80px;
     }
@@ -69,7 +69,7 @@
     font-weight: var(--fw-300);
     color: var(--clr-prim-text);
 
-    @include mq(md) {
+    @include mq(lg) {
         display: grid;
         align-content: center;
         font-size: 4rem;
