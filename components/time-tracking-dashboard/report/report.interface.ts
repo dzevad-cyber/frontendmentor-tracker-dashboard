@@ -5,20 +5,7 @@ export interface IReport {
     width: number;
     height: number;
   };
-  timeframes: {
-    daily: {
-      current: number;
-      previous: number;
-    };
-    weekly: {
-      current: number;
-      previous: number;
-    };
-    monthly: {
-      current: number;
-      previous: number;
-    };
-  };
+  timeframes: Record<string, { current: number; previous: number }>;
 }
 
 export interface ReportProps {
